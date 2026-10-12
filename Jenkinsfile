@@ -38,22 +38,22 @@ pipeline {
     parameters {
         string(name: 'EMAIL_REPORT_DESTINATION', defaultValue: '', description: 'Add email addresses to receive the report (comma-separated for multiple recipients)')
         // FMC parameters
-        string(name: 'FMC_IP', defaultValue: '192.168.0.201', description: 'FMC IP Address')
-        string(name: 'FMC_USERNAME', defaultValue: 'api_user', description: 'FMC Username')
+        string(name: 'FMC_IP', defaultValue: '10.0.171.175', description: 'FMC IP Address')
+        string(name: 'FMC_USERNAME', defaultValue: 'admin', description: 'FMC Username')
         password(name: 'FMC_PASSWORD', description: 'FMC Password')
 
         // FTD parameters
         string(name: 'FW_HOSTNAME_01', defaultValue: 'ciscoftd01', description: 'Cisco FTD 01 Hostname')
-        string(name: 'IP_ADD_FW_01', defaultValue: '192.168.0.202', description: 'Cisco FTD 01 IP Address')
+        string(name: 'IP_ADD_FW_01', defaultValue: '10.0.173.181', description: 'Cisco FTD 01 IP Address')
         string(name: 'FW_HOSTNAME_02', defaultValue: 'ciscoftd02', description: 'Cisco FTD 02 Hostname')
-        string(name: 'IP_ADD_FW_02', defaultValue: '192.168.0.203', description: 'Cisco FTD 02 IP Address')
+        string(name: 'IP_ADD_FW_02', defaultValue: '10.0.173.182', description: 'Cisco FTD 02 IP Address')
         password(name: 'REGKEY', description: 'Key for FMC Registration')
 
         // HA and Network parameters
-        choice(name: 'HA_INTERFACE', choices: ['GigabitEthernet0/3', 'GigabitEthernet0/4', 'GigabitEthernet0/5'], description: 'HA Interface')
+        choice(name: 'HA_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'HA Interface')
 
         // Combined interface configurations
-        choice(name: 'INSIDE_INTERFACE', choices: ['GigabitEthernet0/0','GigabitEthernet0/1','GigabitEthernet0/2','GigabitEthernet0/3','GigabitEthernet0/4'], description: 'Inside: Interface | Name')
+        choice(name: 'INSIDE_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'Inside: Interface | Name')
         string(name: 'INSIDE_INTERFACE_NAME', defaultValue: 'Inside', description: 'Inside Interface Name')
         string(name: 'INSIDE_SEC_ZONE', defaultValue: 'Inside_Sec_Zone', description: 'Inside Security Zone')
         string(name: 'INSIDE_IP', defaultValue: '192.168.1.1', description: 'Inside Interface IP Address')
@@ -63,7 +63,7 @@ pipeline {
 
         // Outside interface configurations
 
-        choice(name: 'OUTSIDE_INTERFACE', choices: ['GigabitEthernet0/0','GigabitEthernet0/1','GigabitEthernet0/2'], description: 'Outside: Interface | Name')
+        choice(name: 'OUTSIDE_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'Outside: Interface | Name')
         string(name: 'OUTSIDE_INTERFACE_NAME', defaultValue: 'Outside', description: 'Outside Interface Name')
         string(name: 'OUTSIDE_SEC_ZONE', defaultValue: 'Outside_Sec_Zone', description: 'Outside Security Zone')
         string(name: 'OUTSIDE_IP', defaultValue: '10.0.0.1', description: 'Outside Interface IP Address')
@@ -74,7 +74,7 @@ pipeline {
 
         // DMZ interface configurations
 
-        choice(name: 'DMZ_INTERFACE', choices: ['GigabitEthernet0/0','GigabitEthernet0/1','GigabitEthernet0/2'], description: 'DMZ: Interface | Name')
+        choice(name: 'DMZ_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'DMZ: Interface | Name')
         string(name: 'DMZ_INTERFACE_NAME', defaultValue: 'DMZ', description: 'DMZ Interface Name')
         string(name: 'DMZ_SEC_ZONE', defaultValue: 'DMZ_Sec_Zone', description: 'DMZ Security Zone') 
         string(name: 'DMZ_IP', defaultValue: '172.16.1.1', description: 'DMZ Interface IP Address')

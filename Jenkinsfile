@@ -29,10 +29,7 @@
 
 pipeline {
     agent any
-    environment {
-       // GMAIL_USERNAME = credentials('gmail-username') // add your work email here
-       // GMAIL_APP_PASSWORD = credentials('gmail-app-password') // add your app password here
-    }
+
     parameters {
         string(name: 'EMAIL_REPORT_DESTINATION', defaultValue: '', description: 'Add email addresses to receive the report (comma-separated for multiple recipients)')
         // FMC parameters

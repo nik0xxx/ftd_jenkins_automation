@@ -53,7 +53,7 @@ pipeline {
         choice(name: 'HA_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'HA Interface')
 
         // Combined interface configurations
-        choice(name: 'INSIDE_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'Inside: Interface | Name')
+        choice(name: 'INSIDE_INTERFACE', choices: ['Ethernet0/0', 'Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'Inside: Interface | Name')
         string(name: 'INSIDE_INTERFACE_NAME', defaultValue: 'Inside', description: 'Inside Interface Name')
         string(name: 'INSIDE_SEC_ZONE', defaultValue: 'Inside_Sec_Zone', description: 'Inside Security Zone')
         string(name: 'INSIDE_IP', defaultValue: '192.168.1.1', description: 'Inside Interface IP Address')
@@ -63,7 +63,7 @@ pipeline {
 
         // Outside interface configurations
 
-        choice(name: 'OUTSIDE_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'Outside: Interface | Name')
+        choice(name: 'OUTSIDE_INTERFACE', choices: ['Ethernet0/0', 'Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'Outside: Interface | Name')
         string(name: 'OUTSIDE_INTERFACE_NAME', defaultValue: 'Outside', description: 'Outside Interface Name')
         string(name: 'OUTSIDE_SEC_ZONE', defaultValue: 'Outside_Sec_Zone', description: 'Outside Security Zone')
         string(name: 'OUTSIDE_IP', defaultValue: '10.0.0.1', description: 'Outside Interface IP Address')
@@ -74,7 +74,7 @@ pipeline {
 
         // DMZ interface configurations
 
-        choice(name: 'DMZ_INTERFACE', choices: ['Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'DMZ: Interface | Name')
+        choice(name: 'DMZ_INTERFACE', choices: ['Ethernet0/0', 'Ethernet0/1', 'Ethernet0/2', 'Ethernet0/3' , 'Ethernet0/4', 'Ethernet0/5'], description: 'DMZ: Interface | Name')
         string(name: 'DMZ_INTERFACE_NAME', defaultValue: 'DMZ', description: 'DMZ Interface Name')
         string(name: 'DMZ_SEC_ZONE', defaultValue: 'DMZ_Sec_Zone', description: 'DMZ Security Zone') 
         string(name: 'DMZ_IP', defaultValue: '172.16.1.1', description: 'DMZ Interface IP Address')
